@@ -556,13 +556,13 @@ integer r;
 
    if (! findex_1.endgmf) {
       ret_val = objcts_1.oroom[oindex_1.cyclo - 1] == r || objcts_1.oroom[
-         oindex_1.troll - 1] == r || objcts_1.oroom[oindex_1.thief - 
-         1] == r && hack_1.thfact;
+         oindex_1.troll - 1] == r || (objcts_1.oroom[oindex_1.thief -
+         1] == r && hack_1.thfact);
    }
    else {
       ret_val = r == rindex_1.mrg || r == rindex_1.mrge || r == 
-         rindex_1.mrgw || r == rindex_1.inmir && findex_1.mloc == 
-         rindex_1.mrg;
+         rindex_1.mrgw || (r == rindex_1.inmir && findex_1.mloc ==
+         rindex_1.mrg);
    }
    return ret_val;
 } /* infest_ */

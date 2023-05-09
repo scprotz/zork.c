@@ -490,8 +490,8 @@ L300:
    /* 						!OBJ ONLY? */
    i = rooms_1.rdesc2[play_1.here - 1];
    /* 						!ASSUME SHORT DESC. */
-   if (full == 0 && (findex_1.superf || (rooms_1.rflag[play_1.here - 1] & 
-               RSEEN) != 0 && findex_1.brieff)) {
+   if (full == 0 && (findex_1.superf || (((rooms_1.rflag[play_1.here - 1] &
+               RSEEN) != 0) && findex_1.brieff))) {
       goto L400;
    }
 
@@ -571,5 +571,7 @@ logical rappli_(integer ri)
    else if (ri < newrms) {
       return rappl1_(ri);
    }
+
+   return FALSE_;
    /* 						!IF OLD, PROCESSOR 1. */
 } /* rappli_ */

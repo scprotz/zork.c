@@ -928,7 +928,7 @@ L60050:
 L60100:
     j = objcts_1.ocan[prsvec_1.prso - 1];
 /* 						!GET CONTAINER. */
-    if (qhere_(prsvec_1.prso, play_1.here) || av != 0 && j == av) {
+    if (qhere_(prsvec_1.prso, play_1.here) || (av != 0 && j == av)) {
 	goto L60200;
     }
     if (j == 0) {
@@ -939,7 +939,7 @@ L60100:
 	goto L60150;
     }
 /* 						!OPEN? */
-    if (qhere_(j, play_1.here) || av != 0 && objcts_1.ocan[j - 1] == av) {
+    if (qhere_(j, play_1.here) || (av != 0 && objcts_1.ocan[j - 1] == av)) {
 	goto L60200;
     }
 L60150:
@@ -1284,8 +1284,8 @@ L87000:
 	i = 524;
     }
 /* 						!VARIETY OF JOKES. */
-    if (! f && (prsvec_1.prso == oindex_1.wall || prsvec_1.prso >= 
-	    oindex_1.wnort && prsvec_1.prso <= oindex_1.wnort + 3)) {
+    if (! f && (prsvec_1.prso == oindex_1.wall || (prsvec_1.prso >=
+	    oindex_1.wnort && prsvec_1.prso <= oindex_1.wnort + 3))) {
 	i = 656;
     }
     rspeak_(i);

@@ -107,9 +107,9 @@ L100:
       if ((objcts_1.oflag1[i - 1] & ONBT) != 0) {
          return ret_val;
       }
-      if ((objcts_1.oflag1[i - 1] & VISIBT) == 0 || (
+      if ((objcts_1.oflag1[i - 1] & VISIBT) == 0 || ((
                objcts_1.oflag1[i - 1] & TRANBT) == 0 && (
-                  objcts_1.oflag2[i - 1] & OPENBT) == 0) {
+                  objcts_1.oflag2[i - 1] & OPENBT) == 0)) {
          goto L1000;
       }
 
@@ -148,8 +148,8 @@ integer weight_(integer rm, integer cn, integer ad)
          continue;
       }
       /* 						!IF FIXED, FORGET IT. */
-      if (qhere_(i, rm) && rm != 0 || objcts_1.oadv[i - 1] == ad && ad 
-            != 0) {
+      if ((qhere_(i, rm) && rm != 0) || (objcts_1.oadv[i - 1] == ad && ad
+            != 0)) {
          goto L50;
       }
       j = i;

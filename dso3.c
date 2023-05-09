@@ -8,7 +8,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical findxt_(integer dir, integer rm)
+logical findxt_(integer dir, integer rm) // @suppress("No return")
 {
    /* System generated locals */
    logical ret_val;
@@ -40,15 +40,17 @@ logical findxt_(integer dir, integer rm)
       case 3: 
          curxt_1.xobj = exits_1.travel[xi + 1] & xpars_1.xrmask;
          curxt_1.xactio = exits_1.travel[xi + 1] / xpars_1.xashft;
+         /* no break */
       case 2:
          curxt_1.xstrng = exits_1.travel[xi];
+         /* no break */
       case 1:
          xi += xpars_1.xelnt[curxt_1.xtype - 1];
          /* 						!ADVANCE TO NEXT ENTRY. */
          if ((i & xpars_1.xdmask) == dir) {
             return ret_val;
          }
-	 break;
+         break;
       default:
 	  /* 						!BRANCH ON ENTRY. */
 	  bug_(10, curxt_1.xtype);
@@ -87,9 +89,9 @@ integer fwim_(integer f1, integer f2, integer rm,
       if ((objcts_1.oflag1[i - 1] & VISIBT) == 0) {
          continue;
       }
-      if (~ (nocare) & (objcts_1.oflag1[i - 1] & TAKEBT) == 0 || (
+      if ((~ (nocare) & (objcts_1.oflag1[i - 1] & TAKEBT) == 0) || ((
                objcts_1.oflag1[i - 1] & f1) == 0 && (objcts_1.oflag2[i - 1] 
-                  & f2) == 0) {
+                  & f2) == 0)) {
          goto L500;
       }
       if (ret_val != 0) {
@@ -108,8 +110,8 @@ L500:
       for (j = 1; j <= objcts_1.olnt; ++j) {
          /* 						!NO, SEARCH CONTENTS. */
          if (objcts_1.ocan[j - 1] != i || (objcts_1.oflag1[j - 1] & 
-                  VISIBT) == 0 || (objcts_1.oflag1[j - 1] & f1) ==
-               0 && (objcts_1.oflag2[j - 1] & f2) == 0) {
+                  VISIBT) == 0 || ((objcts_1.oflag1[j - 1] & f1) ==
+               0 && (objcts_1.oflag2[j - 1] & f2) == 0)) {
             continue;
          }
          if (ret_val == 0) {

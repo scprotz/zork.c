@@ -59,7 +59,7 @@ L500:
    return ret_val;
 
 L600:
-   if (x != 0 && objcts_1.oadv[x - 1] == play_1.winner || weight_(0,
+   if ((x != 0 && objcts_1.oadv[x - 1] == play_1.winner) || weight_(0,
             prsvec_1.prso, play_1.winner) + objcts_1.osize[prsvec_1.prso - 1]
          <= state_1.mxload) {
       goto L700;
@@ -357,7 +357,7 @@ void valuac_(integer v)
       if (! qhere_(prsvec_1.prso, play_1.here) || (objcts_1.oflag1[
                prsvec_1.prso - 1] & VISIBT) == 0 || (
                   objcts_1.oflag2[prsvec_1.prso - 1] & ACTRBT) != 0 || 
-            savep == v && objcts_1.otval[prsvec_1.prso - 1] <= 0) {
+            (savep == v && objcts_1.otval[prsvec_1.prso - 1] <= 0)) {
          continue;
       }
       if ((objcts_1.oflag1[prsvec_1.prso - 1] & TAKEBT) == 0 && (
@@ -379,8 +379,8 @@ L1000:
    }
    /* 						!DROP EVERY/VALUA? */
    for (prsvec_1.prso = 1; prsvec_1.prso <= objcts_1.olnt; ++prsvec_1.prso) {
-      if (objcts_1.oadv[prsvec_1.prso - 1] != play_1.winner || savep == v 
-            && objcts_1.otval[prsvec_1.prso - 1] <= 0) {
+      if (objcts_1.oadv[prsvec_1.prso - 1] != play_1.winner || (savep == v
+            && objcts_1.otval[prsvec_1.prso - 1] <= 0)) {
          continue;
       }
       f = FALSE_;
@@ -400,8 +400,8 @@ L2000:
    for (prsvec_1.prso = 1; prsvec_1.prso <= objcts_1.olnt; ++prsvec_1.prso) {
       /* 						!LOOP THRU OBJECTS. */
       if (objcts_1.oadv[prsvec_1.prso - 1] != play_1.winner || 
-            prsvec_1.prso == prsvec_1.prsi || savep == v && 
-            objcts_1.otval[prsvec_1.prso - 1] <= 0 || (objcts_1.oflag1[
+            prsvec_1.prso == prsvec_1.prsi || (savep == v &&
+            objcts_1.otval[prsvec_1.prso - 1] <= 0) || (objcts_1.oflag1[
                prsvec_1.prso - 1] & VISIBT) == 0) {
          continue;
       }

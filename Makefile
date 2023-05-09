@@ -44,7 +44,7 @@ LIBS = -lcurses
 
 # Compilation flags
 # CFLAGS = -g -DDEBUG
-CFLAGS = -O3
+CFLAGS = -O0 -g -DDEBUG
 # On SCO Unix Development System 3.2.2a, the const type qualifier does
 # not work correctly when using cc.  The following line will cause it
 # to not be used and should be uncommented.
@@ -63,6 +63,9 @@ OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
 	dso1.o dso2.o dso3.o dso4.o dso5.o dso6.o dso7.o dsub.o dverb1.o\
 	dverb2.o gdt.o lightp.o local.o nobjs.o np.o np1.o np2.o np3.o\
 	nrooms.o objcts.o rooms.o sobjs.o supp.o sverbs.o verbs.o villns.o
+
+all: $(OBJS) dtextc.dat
+	$(CC) $(CFLAGS) -o dungeon $(OBJS) $(LIBS)
 
 dungeon: $(OBJS) dtextc.dat
 	$(CC) $(CFLAGS) -o dungeon $(OBJS) $(LIBS)

@@ -243,8 +243,10 @@ L1000:
     }
     if (cp == 0) {
 	*op += -2;
+	printf("cp is %d\n", *op);
     }
 /* 						!ANY LAST WORD? */
+
     ret_val = TRUE_;
     return ret_val;
 

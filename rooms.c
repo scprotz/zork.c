@@ -236,9 +236,9 @@ L6000:
     return ret_val;
 
 L6500:
-    if (findex_1.rvclr != 0 || qhere_(oindex_1.leave, rindex_1.clear) && (
+    if (findex_1.rvclr != 0 || (qhere_(oindex_1.leave, rindex_1.clear) && (
 	    prsvec_1.prsa != vindex_1.movew || prsvec_1.prso != 
-	    oindex_1.leave)) {
+	    oindex_1.leave))) {
 	return ret_val;
     }
     rspeak_(30);

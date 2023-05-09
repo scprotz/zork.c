@@ -101,10 +101,10 @@ L2100:
    /* 						!WALK? */
    i = 784;
    /* 						!ASSUME WONT. */
-   if (play_1.here == rindex_1.scorr && (prsvec_1.prso == xsrch_1.xnorth || 
-            prsvec_1.prso == xsrch_1.xenter) || play_1.here == rindex_1.ncorr 
+   if ((play_1.here == rindex_1.scorr && (prsvec_1.prso == xsrch_1.xnorth ||
+            prsvec_1.prso == xsrch_1.xenter)) || (play_1.here == rindex_1.ncorr
          && (prsvec_1.prso == xsrch_1.xsouth || prsvec_1.prso == 
-            xsrch_1.xenter)) {
+            xsrch_1.xenter))) {
       i = 785;
    }
    rspeak_(i);
