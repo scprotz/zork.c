@@ -5,3 +5,9 @@ dtextc.dat
 *anjuta*
 *.swp
 TODO.tasks
+/.cproject
+/.project
+/.pydevproject
+/dsave.c.dat
+/dungeon.so
+/walk.old
