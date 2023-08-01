@@ -44,7 +44,7 @@ LIBS = -lcurses
 
 # Compilation flags
 # CFLAGS = -g -DDEBUG
-CFLAGS = -O0 -g -DDEBUG
+CFLAGS = -fPIC -O0 -g -DDEBUG
 # On SCO Unix Development System 3.2.2a, the const type qualifier does
 # not work correctly when using cc.  The following line will cause it
 # to not be used and should be uncommented.
@@ -69,6 +69,9 @@ all: $(OBJS) dtextc.dat
 
 dungeon: $(OBJS) dtextc.dat
 	$(CC) $(CFLAGS) -o dungeon $(OBJS) $(LIBS)
+
+libdungeon: $(OBJS) dtextc.dat
+	$(CC) -shared -o libdungeon.so -fPIC $(OBJS) $(LIBS)
 
 install: dungeon dtextc.dat
 	cp dungeon $(BINDIR)

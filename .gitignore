@@ -5,3 +5,6 @@ dtextc.dat
 *anjuta*
 *.swp
 TODO.tasks
+/libdungeon.so
+/.cproject
+/.project
