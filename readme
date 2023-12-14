@@ -1,3 +1,11 @@
+This is a fork of the original code that I was able to get running
+on Ubuntu 22.04.
+
+Below is the original README
+*******************************
+
+
+
 This is a source file distribution for the game dungeon as implemented
 in C.  It is based on the game dungeon as distributed on a DECUS tape,
 circa 1980.  It has been converted from the original DEC FORTRAN to

@@ -9,5 +9,5 @@ TODO.tasks
 /.project
 /.pydevproject
 /dsave.c.dat
-/dungeon.so
+/libdungeon.so
 /walk.old
