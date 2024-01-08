@@ -56,10 +56,14 @@ integer *secptr;
 
 /* Random number generator */
 
+integer rndcnt = 1;
+
 integer rnd_(maxval)
 integer maxval;
 {
-	return rand() % maxval;
+	rndcnt ++;
+//	return rand() % maxval;
+	return rndcnt % maxval;
 }
 
 /* Terminal support routines for dungeon */
