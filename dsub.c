@@ -78,7 +78,7 @@ static void rspsb2nl_(integer n, integer y, integer z, integer nl)
    res = fseek(dbfile, x + (long)rmsg_1.mrloc, SEEK_SET);
 #ifdef DEBUG
    if (res == EOF) {
-      fprintf(stderr, "Error seeking database loc %d\n", x);
+      fprintf(stderr, "Error seeking database loc %ld\n", x);
       exit_();
    }
 #endif
@@ -92,7 +92,7 @@ static void rspsb2nl_(integer n, integer y, integer z, integer nl)
       i = getc(dbfile);
 #ifdef DEBUG
       if (i == EOF) {
-         fprintf(stderr, "Error reading database loc %d\n", x);
+         fprintf(stderr, "Error reading database loc %ld\n", x);
          exit_();
       }
 #endif
@@ -113,7 +113,7 @@ static void rspsb2nl_(integer n, integer y, integer z, integer nl)
 	 res = fseek(dbfile, iloc, SEEK_SET);
 #ifdef DEBUG
          if (res == EOF) {
-            fprintf(stderr, "Error seeking database loc %d\n", iloc);
+            fprintf(stderr, "Error seeking database loc %ld\n", iloc);
             exit_();
          }
 #endif
